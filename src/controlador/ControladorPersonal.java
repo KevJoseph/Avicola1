@@ -46,6 +46,28 @@ public class ControladorPersonal {
             return null;
         }
     }
+    public int modificarPersonal(Personal personal){
+        this.bd.conectar();
+        
+        int resultado = this.mpersonal.updatePersonal(personal.getCod_p(),personal.getNombre(),personal.getApellido(),personal.getFecha_i(),personal.getTipo());
+        
+        if(resultado == BaseDatosResultados.EXITO_GUARDAR){
+            return BaseDatosResultados.EXITO_GUARDAR;
+        }else{
+            return BaseDatosResultados.FALLO_GUARDAR;
+        }
+    }
+    
+    public int eliminarPersonal(Personal personal){
+        this.bd.conectar();
+        int resultado = this.mpersonal.deletePersonal(personal.getCod_p());
+        System.out.println("Controlador tiene el: "+personal.getCod_p());
+        if(resultado == BaseDatosResultados.EXITO_GUARDAR){
+            return BaseDatosResultados.EXITO_GUARDAR;
+        }else{
+            return BaseDatosResultados.FALLO_GUARDAR;
+        }
+    }
     
     
     

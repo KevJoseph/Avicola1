@@ -47,9 +47,10 @@ public class ModeloPersonal {
             
             st.execute();
             this.cbd.desconectar();
-            
+            System.out.println("ModeloPersonal: OK");
             return BaseDatosResultados.EXITO_GUARDAR;
         } catch (Exception e) {
+            System.out.println("ModeloPersonal: ERROR,verifica campos en la sentencia sql");
             return BaseDatosResultados.FALLO_GUARDAR;
         }
     }
@@ -81,10 +82,47 @@ public class ModeloPersonal {
         }
 
     }
-    public static void main(String[] args) {
-        ModeloPersonal m = new ModeloPersonal();
-        m.selectPersonal();
+
+    public int updatePersonal(String codigo,String nombre,String apellido,String fecha,String tipo){
+        try {
+            this.cbd.conectar();
+            String sql = "update personal set nombre = ?,apellido = ?,fecha = ?,tipo = ? where codpersonal = ?";
+            PreparedStatement st = cbd.objconexion().prepareStatement(sql);
+            st.setString (1, nombre);
+            st.setString (2, apellido);
+            st.setString (3, fecha);
+            st.setString (4, tipo);
+            st.setString (5, codigo);
+            st.execute();
+            this.cbd.desconectar();
+            System.out.println("ModeloPersonal: OK");
+            return BaseDatosResultados.EXITO_GUARDAR;
+        } catch (Exception e) {
+            System.out.println("ModeloPersonal: ERROR");
+            return BaseDatosResultados.FALLO_GUARDAR;
+
+        }   
+        
     }
+    public int deletePersonal(String codigo){
+        try {
+            this.cbd.conectar();
+            String sql = "delete from personal where codpersonal = ?";
+            PreparedStatement st = cbd.objconexion().prepareStatement(sql);
+            st.setString (1, codigo);
+            st.execute();
+            this.cbd.desconectar();
+            System.out.println("ModeloPersonal: OK");
+            return BaseDatosResultados.EXITO_GUARDAR;        
+        } catch (Exception e) {
+            System.out.println("ModeloPersonal: ERROR");
+            return BaseDatosResultados.FALLO_GUARDAR;
+        }
+    }
+    /*public static void main(String[] args) {
+        ModeloPersonal m = new ModeloPersonal();
+        m.deletePersonal();
+    }*/
     
 
 }

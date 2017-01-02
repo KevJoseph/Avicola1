@@ -71,5 +71,11 @@ public class Personal {
     public Object[] toArray(){
        return new Object[]{this.cod_p, this.nombre, this.apellido,this.fecha_i,this.tipo};
     }
+
+    @Override
+    public String toString() {
+        return "Personal{" + "cod_p=" + cod_p + ", nombre=" + nombre + ", apellido=" + apellido + ", fecha_i=" + fecha_i + ", tipo=" + tipo + '}';
+    }
+    
     
 }
