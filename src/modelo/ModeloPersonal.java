@@ -24,9 +24,7 @@ import java.util.Iterator;
  */
 public class ModeloPersonal {
     private ControladorBaseDatos cbd;
-    Connection con = null;
 
-    ConfiBaseDatos confibasedatos = new ConfiBaseDatos("root", "pass","bd_avicola");
    
     public ModeloPersonal() {
         this.cbd = new ControladorBaseDatos();
