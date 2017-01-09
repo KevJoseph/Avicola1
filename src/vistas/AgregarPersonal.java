@@ -57,7 +57,6 @@ public class AgregarPersonal extends javax.swing.JInternalFrame {
         ArrayList informacion = new ArrayList();
         informacion = cpersonal.mostrarPersonal();
         Iterator it = informacion.iterator();
-        String datos[] = new String[5];
         while(it.hasNext()){
                 //Object  ob = it.next();
         Personal p = (Personal) it.next();

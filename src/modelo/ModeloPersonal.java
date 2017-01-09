@@ -58,11 +58,9 @@ public class ModeloPersonal {
         try {
             this.cbd.conectar();
             String sql = "select * from personal";
-            String datos[] = new String[5];
             Statement st = cbd.objconexion().createStatement();
             ResultSet rs = st.executeQuery(sql);
             
-            System.out.println(rs.getFetchSize());
             while(rs.next()){
                 String codigo_p = rs.getString("codpersonal");
                 String nombre = rs.getString("nombre");
@@ -70,8 +68,10 @@ public class ModeloPersonal {
                 String fecha = rs.getString("fecha");
                 String tipo = rs.getString("tipo");
                 Personal tempersonal = new Personal(codigo_p,nombre,apellido,fecha,tipo);
+                System.out.println(tempersonal.toString());
                 lista.add(tempersonal);
             }
+            this.cbd.desconectar();
             return lista;
             
         } catch (SQLException e) {
@@ -117,10 +117,10 @@ public class ModeloPersonal {
             return BaseDatosResultados.FALLO_GUARDAR;
         }
     }
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         ModeloPersonal m = new ModeloPersonal();
-        m.deletePersonal();
-    }*/
+        m.selectPersonal();
+    }
     
 
 }

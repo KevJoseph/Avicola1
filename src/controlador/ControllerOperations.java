@@ -5,12 +5,15 @@
  */
 package controlador;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author vek
  */
 public interface ControllerOperations {
-    public int guardar();
+    public int guardar(Object o);
+    public ArrayList mostrar();
     public int modificar();
     public int eliminar();
 }

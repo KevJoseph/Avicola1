@@ -5,13 +5,15 @@
  */
 package modelo;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author vek
  */
 public interface DatabaseModelOperations {
-    public int guardar();
-    public int mostrar();
-    public int modificar();
-    public int eliminar();
+    public int insert();
+    public ArrayList select();
+    public int update();
+    public int delete();
 }

@@ -29,10 +29,11 @@ public class Vista extends javax.swing.JFrame {
 
         escritorio = new javax.swing.JDesktopPane();
         jMenuBar1 = new javax.swing.JMenuBar();
-        jMenu1 = new javax.swing.JMenu();
+        menuMantenimiento = new javax.swing.JMenu();
         menuPersonal = new javax.swing.JMenuItem();
         menuGalpon = new javax.swing.JMenuItem();
-        jMenu2 = new javax.swing.JMenu();
+        menuAsistencia = new javax.swing.JMenu();
+        menuItemAsistencia = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new javax.swing.BoxLayout(getContentPane(), javax.swing.BoxLayout.LINE_AXIS));
@@ -50,7 +51,7 @@ public class Vista extends javax.swing.JFrame {
 
         getContentPane().add(escritorio);
 
-        jMenu1.setText("Mantenimiento");
+        menuMantenimiento.setText("Mantenimiento");
 
         menuPersonal.setText(" Personal");
         menuPersonal.addActionListener(new java.awt.event.ActionListener() {
@@ -58,7 +59,7 @@ public class Vista extends javax.swing.JFrame {
                 menuPersonalActionPerformed(evt);
             }
         });
-        jMenu1.add(menuPersonal);
+        menuMantenimiento.add(menuPersonal);
 
         menuGalpon.setText("Galpon");
         menuGalpon.addActionListener(new java.awt.event.ActionListener() {
@@ -66,12 +67,26 @@ public class Vista extends javax.swing.JFrame {
                 menuGalponActionPerformed(evt);
             }
         });
-        jMenu1.add(menuGalpon);
+        menuMantenimiento.add(menuGalpon);
 
-        jMenuBar1.add(jMenu1);
+        jMenuBar1.add(menuMantenimiento);
 
-        jMenu2.setText("Edit");
-        jMenuBar1.add(jMenu2);
+        menuAsistencia.setText("Asistencia");
+        menuAsistencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuAsistenciaActionPerformed(evt);
+            }
+        });
+
+        menuItemAsistencia.setText("Generar Asistencia");
+        menuItemAsistencia.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                menuItemAsistenciaActionPerformed(evt);
+            }
+        });
+        menuAsistencia.add(menuItemAsistencia);
+
+        jMenuBar1.add(menuAsistencia);
 
         setJMenuBar(jMenuBar1);
 
@@ -88,7 +103,19 @@ public class Vista extends javax.swing.JFrame {
 
     private void menuGalponActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuGalponActionPerformed
         // TODO add your handling code here:
+        System.out.println("asdasdqeqe");
     }//GEN-LAST:event_menuGalponActionPerformed
+
+    private void menuAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuAsistenciaActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_menuAsistenciaActionPerformed
+
+    private void menuItemAsistenciaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_menuItemAsistenciaActionPerformed
+        // TODO add your handling code here:
+        FormAsistencias frmAsistencia = new FormAsistencias();
+        escritorio.add(frmAsistencia);
+        frmAsistencia.show();
+    }//GEN-LAST:event_menuItemAsistenciaActionPerformed
 
     /**
      * @param args the command line arguments
@@ -96,10 +123,11 @@ public class Vista extends javax.swing.JFrame {
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane escritorio;
-    private javax.swing.JMenu jMenu1;
-    private javax.swing.JMenu jMenu2;
     private javax.swing.JMenuBar jMenuBar1;
+    private javax.swing.JMenu menuAsistencia;
     private javax.swing.JMenuItem menuGalpon;
+    private javax.swing.JMenuItem menuItemAsistencia;
+    private javax.swing.JMenu menuMantenimiento;
     public static javax.swing.JMenuItem menuPersonal;
     // End of variables declaration//GEN-END:variables
 }

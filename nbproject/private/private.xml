@@ -3,15 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/home/vek/NetBeansProjects/avicola1/src/vistas/FormGalpon.java</file>
-            <file>file:/home/vek/NetBeansProjects/avicola1/src/controlador/ControladorGalpon.java</file>
-            <file>file:/home/vek/NetBeansProjects/avicola1/src/modelo/ModeloPersonal.java</file>
-            <file>file:/home/vek/NetBeansProjects/avicola1/src/controlador/ControladorPersonal.java</file>
-            <file>file:/home/vek/NetBeansProjects/avicola1/src/controlador/ControladorBaseDatos.java</file>
-            <file>file:/home/vek/NetBeansProjects/avicola1/src/modelo/ConfiBaseDatos.java</file>
-            <file>file:/home/vek/NetBeansProjects/avicola1/src/controlador/ControllerOperations.java</file>
-            <file>file:/home/vek/NetBeansProjects/avicola1/src/entidades/Galpon.java</file>
-            <file>file:/home/vek/NetBeansProjects/avicola1/src/modelo/ModeloGalpon.java</file>
+            <file>file:/home/vek/NetBeansProjects/avicola1/src/vistas/FormAsistencias.java</file>
+            <file>file:/home/vek/NetBeansProjects/avicola1/src/vistas/AgregarPersonal.java</file>
         </group>
     </open-files>
 </project-private>
